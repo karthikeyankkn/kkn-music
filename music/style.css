@@ -1,0 +1,12 @@
+body{
+	background: #201177;
+	color: #c1b018;
+}
+a{
+	color: #c1b018;
+	display: block;
+	margin: 10px 0;
+}
+a:visited, a:hover{
+	color: #fff;
+}
