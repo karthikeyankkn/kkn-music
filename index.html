@@ -33,16 +33,24 @@
 <script>
 		var folder = "music/";
 		debugger
-		$.ajax({
-		    url : folder,
-		    success: function (data) {
-		        $(data).find("a").attr("href", function (i, val) {
-		            if( val.match(/\.(jpe?g|png|gif|mp3)$/) ) { 
-		                $("ul").append( "<li><a href='"+val +"'>'"+val+"'</a></li>" );
-		            } 
-		        });
-		    }
-		});
+		// $.ajax({
+		//     url : folder,
+		//     success: function (data) {
+		//         $(data).find("a").attr("href", function (i, val) {
+		//             if( val.match(/\.(jpe?g|png|gif|mp3)$/) ) { 
+		//                 $("ul").append( "<li><a href='"+val +"'>'"+val+"'</a></li>" );
+		//             } 
+		//         });
+		//     }
+		// });
+
+    $.get(folder, function(data, status){
+      $(data).find("a").attr("href", function (i, val) {
+        if( val.match(/\.(jpe?g|png|gif|mp3)$/) ) { 
+          $("ul").append( "<li><a href='"+val +"'>'"+val+"'</a></li>" );
+        } 
+      });
+    });
 	</script>
 </body>
 </html>
